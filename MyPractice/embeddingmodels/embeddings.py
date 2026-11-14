@@ -9,7 +9,7 @@ embeddings = OpenAIEmbeddings(
 )
 
 texts = [
-    "Hello this is Akarsh Vyas",
+    "Hello this is Noor Alam",
     "Hello your name is YouTube",
     "And you all are very beautiful"
 ]

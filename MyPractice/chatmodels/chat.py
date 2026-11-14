@@ -54,6 +54,21 @@
 
 
 # //
+# from dotenv import load_dotenv
+
+# load_dotenv()
+
+# from langchain_mistralai import ChatMistralAI
+
+# model = ChatMistralAI(model = "mistral-small-2506",temperature=0.9)
+
+# prompt = input("You : ")
+# response = model.invoke(prompt)
+
+# print(response.content)
+
+
+# ///
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -62,6 +77,10 @@ from langchain_mistralai import ChatMistralAI
 
 model = ChatMistralAI(model = "mistral-small-2506",temperature=0.9)
 
-response = model.invoke("write a poem on AI")
-
-print(response.content)
+while True:
+    print("----------------------------- welcome type 0 to exit the application -----------------------------")
+    prompt = input("You : ")
+    if prompt == "0":
+        break
+    response = model.invoke(prompt)
+    print("Bot : ", response.content)
