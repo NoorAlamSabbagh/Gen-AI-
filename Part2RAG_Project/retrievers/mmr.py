@@ -34,7 +34,7 @@ for doc in similarity_docs:
 
 mmr_retriever = vectorstore.as_retriever(
     search_type="mmr",
-    search_kwargs={"k":3}
+    search_kwargs={"k": 3, "fetch_k": len(docs)}  # fetch_k must be <= total documents in collection
 )
 
 print("\n===== MMR Results =====\n")
