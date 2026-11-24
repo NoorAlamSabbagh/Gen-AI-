@@ -1,7 +1,4 @@
-from dotenv import load_dotenv
-load_dotenv()
-
-from langchain_mistralai import ChatMistralAI
+from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
@@ -11,8 +8,8 @@ prompt = ChatPromptTemplate.from_template(
     "Explain {topic} in simple words"
 )
 
-# 2. Model
-model = ChatMistralAI(model="mistral-small-2506")
+# 2. Model (using Ollama locally — free, no API key needed)
+model = ChatOllama(model="llama3.2", base_url="http://127.0.0.1:11434")
 
 # 3. Output Parser
 parser = StrOutputParser()
